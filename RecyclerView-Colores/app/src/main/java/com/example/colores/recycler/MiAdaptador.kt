@@ -1,5 +1,6 @@
 package com.example.colores.recycler
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.graphics.toColorInt
@@ -8,6 +9,9 @@ import com.example.colores.R
 import com.example.colores.model.Datos
 
 class MiAdaptador(var misDatos : Datos) : RecyclerView.Adapter<MiVista>() {
+
+    var posicionSeleccionada = RecyclerView.NO_POSITION
+
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -28,6 +32,26 @@ class MiAdaptador(var misDatos : Datos) : RecyclerView.Adapter<MiVista>() {
 
         holder.itemView.setBackgroundColor(colorInt)
 
+
+        if(position == posicionSeleccionada){
+
+            holder.nombreColor.setTextColor(colorInt)
+            holder.hexColor.setTextColor(colorInt)
+            holder.itemView.setBackgroundColor(Color.WHITE)
+
+        }else{
+
+            holder.nombreColor.setTextColor(Color.WHITE)
+            holder.hexColor.setTextColor(Color.WHITE)
+            holder.itemView.setBackgroundColor(colorInt)
+        }
+
+        holder.itemView.setOnClickListener {
+            notifyItemChanged(posicionSeleccionada)
+            posicionSeleccionada = position
+            notifyItemChanged(posicionSeleccionada)
+
+        }
 
     }
     override fun getItemCount(): Int {

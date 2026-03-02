@@ -9,7 +9,6 @@ class RecyclerModel {
         Colores("Cian", "#00FFFF"),
         Colores("Magenta", "#FF00FF"),
         Colores("Negro", "#000000"),
-        Colores("Blanco", "#FFFFFF"),
         Colores("Gris", "#808080"),
         Colores("Gris Claro", "#D3D3D3"),
         Colores("Gris Oscuro", "#A9A9A9"),
