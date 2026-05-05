@@ -3,13 +3,13 @@ plugins {
 }
 
 android {
-    namespace = "com.example.mshop"
+    namespace = "com.example.mshop2"
     compileSdk {
         version = release(36)
     }
 
     defaultConfig {
-        applicationId = "com.example.mshop"
+        applicationId = "com.example.mshop2"
         minSdk = 24
         targetSdk = 36
         versionCode = 1
@@ -27,12 +27,12 @@ android {
             )
         }
     }
+    buildFeatures{
+        viewBinding = true
+    }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
-    }
-    buildFeatures{
-        viewBinding = true
     }
 }
 
@@ -47,4 +47,6 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
     implementation ("com.squareup.retrofit2:retrofit:3.0.0" )
     implementation ("com.squareup.retrofit2:converter-gson:3.0.0" )
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2" )
+    implementation ("androidx.lifecycle:lifecycle-runtime-ktx:2.10.0" )
 }

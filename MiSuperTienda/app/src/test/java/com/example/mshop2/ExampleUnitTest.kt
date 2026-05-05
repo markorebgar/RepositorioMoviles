@@ -1,4 +1,4 @@
-package com.example.mshop
+package com.example.mshop2
 
 import org.junit.Test
 
